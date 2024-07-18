@@ -1,0 +1,32 @@
+.tab {
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: .03rem;
+  padding: .7rem 1rem .7rem 3rem;
+  border-radius: .5rem;
+  cursor: pointer;
+  background: #353542 url("../assets/icons/default/sprite.svg#tab") no-repeat 1.2rem center / 1rem;
+  position: relative;
+  &::before {
+    content: '';
+    background: linear-gradient(to bottom, $accent2, rgba(149,149,149,.5));
+    border-radius: .5rem;
+    width: calc(100% + 1px);
+    height: calc(100% + 1px);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    z-index: -1;
+  }
+  &:not(:last-of-type) {
+    margin-right: .5rem;
+  }
+  &.active {
+    background-color: #212129;
+    box-shadow: 0px 3px 15px 0px rgba(132, 213, 44, 0.2);
+  }
+  &__input {
+    display: none;
+  }
+}

@@ -1,0 +1,17 @@
+.search {
+  width: 26rem;
+  margin-right: .9rem;
+  &__input {
+    width: 100%;
+    background-color: transparent;
+    background-image: url("../assets/icons/default/sprite.svg#search");
+    background-repeat: no-repeat;
+    background-size: 1rem;
+    background-position: 1rem center;
+    font-size: .89rem;
+    color: $border;
+    border: 1px solid $border;
+    border-radius: .67rem;
+    padding: .7rem 2.8rem;
+  }
+}

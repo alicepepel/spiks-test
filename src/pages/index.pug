@@ -1,0 +1,105 @@
+extends ../core/ui/layout/templates/map.pug
+include ../core/ui/layout/templates/tools/_mixins.pug
+
+block title
+  | Карта проекта
+
+block workarea
+  h1.title.visually-hidden Карта проекта
+
+  header.navbar.page-header
+    a(class='logotype' href='javascript:void(0)') Marketplace
+    form.search
+      input(class="search__input" type="text" placeholder="Search for a product, flower, etc")
+    fieldset(class="navbar tabs-bar" form="form")
+      +headerTab("Buds", "buds", "active")
+      +headerTab("Edible", "edible")
+      +headerTab("Non Edible", "nonedible")
+      +headerTab("Concentrate", "concentrate")
+
+  form(class="form" id="form")
+
+    div.navbar.range-bar
+
+      div.range
+        div(class="range__item range__item_price")
+          span.range__title Price Range
+          div(id="priceSlider")
+          span(id="price-snap-value-lower" class="range__snap range__snap_lower")
+          span(id="price-snap-value-upper" class="range__snap range__snap_upper")
+        div(class="range__item range__item_thc")
+          span.range__title ТНС, %
+          div(id="thcSlider")
+          span(id="thc-snap-value-lower" class="range__snap range__snap_lower")
+          span(id="thc-snap-value-upper" class="range__snap range__snap_upper")
+        div(class="range__item range__item_cbd")
+          span.range__title CBD, %
+          div(id="cbdSlider")
+          span(id="cbd-snap-value-lower" class="range__snap range__snap_lower")
+          span(id="cbd-snap-value-upper" class="range__snap range__snap_upper")
+
+      div.sort.active
+        button(class="sort__button" type="button")
+        div.sort__wrapper
+          span.sort__title Sort by:
+          ul.sort__list
+            li.sort__item
+              a(href="#" class="sort__link") Date (New first)
+            li.sort__item
+              a(href="#" class="sort__link") Date (Old first)
+            li.sort__item
+              a(href="#" class="sort__link") Price (High first)
+            li.sort__item
+              a(href="#" class="sort__link") Price (Low first)
+            li.sort__item
+              a(href="#" class="sort__link") Total THC (High first)
+            li.sort__item
+              a(href="#" class="sort__link") Total THC (Low first)
+            li.sort__item
+              a(href="#" class="sort__link") Total CBD (High first)
+            li.sort__item
+              a(href="#" class="sort__link") Total CBD (Low first)
+
+    div.navbar.result-bar
+      div.result
+        span.result__num 1034,5
+        |  Results
+      ul.badge
+        li(class="badge__item" data-num="num1") 100% Indica
+        li(class="badge__item" data-num="num3") >50% Indica
+        li(class="badge__item" data-num="num5") Indoor
+        li(class="badge__item" data-num="num11") Flower
+        //li.badge__item Michigan
+        //li.badge__item SellerSeller
+        //li.badge__item Distributor
+
+    div.filter
+      fieldset.filter__fieldset.active
+        legend.filter__title Classification
+        div.filter__wrapper
+          +checkbox("100% Indica", "100indica", "num1", "checked")
+          +checkbox("100% Sativa", "100sativa", "num2")
+          +checkbox(">50% Indica", "50indica", "num3", "checked")
+          +checkbox(">50% Sativa", "50sativa", "num4")
+      fieldset.filter__fieldset.active
+        legend.filter__title Production Method
+        div.filter__wrapper
+          +checkbox("Indoor", "idoor", "num5", "checked")
+          +checkbox("Outdoor", "outdoor", "num6")
+          +checkbox("Greenhouse", "greenhouse", "num7")
+          +checkbox("Light Deprivation", "deprivation", "num8")
+          +checkbox("Mixed Light", 'mixed', "num9")
+          +checkbox("Other", "other", "num10")
+      fieldset.filter__fieldset
+        legend.filter__title Size
+        div.filter__wrapper
+          +checkbox("Flower", "flower", "num11", "checked")
+          +checkbox("Pre-Roll Flower", "pr-flower", "num12")
+          +checkbox("Pre-Roll Infused", "pr-infused", "num13")
+          +checkbox("Pre-Roll Leaf", "pr-leaf", "num14")
+          +checkbox("Shake", "shake", "num15")
+          +checkbox("Smalls", "smalls", "num16")
+          +checkbox("Trim", "trim", "num17")
+          +checkbox("Shake", "second-shake", "num18")
+          +checkbox("Keef", "keef", "num19")
+          +checkbox("Fresh Frozen", "frozen", "num20")

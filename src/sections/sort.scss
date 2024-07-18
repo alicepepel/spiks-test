@@ -1,0 +1,103 @@
+.sort {
+  position: relative;
+  top: -.5rem;
+  &:hover {
+    .sort__wrapper {
+      display: block;
+    }
+  }
+  &__button {
+    display: block;
+    width: 2.6rem;
+    height: 2.6rem;
+    background: #353542 url("../assets/icons/default/sprite.svg#sort") no-repeat center / 1.3rem;
+    border-radius: .5rem;
+    border: none;
+    position: relative;
+    cursor: pointer;
+    &::before {
+      content: '';
+      background: linear-gradient(to bottom, $accent2, rgba(149,149,149,.5));
+      border-radius: .5rem;
+      width: calc(100% + 2px);
+      height: calc(100% + 1px);
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translateX(-50%) translateY(-50%);
+      z-index: -1;
+    }
+  }
+  &__wrapper {
+    background-color: #212129;
+    padding: 1.4rem 1.1rem;
+    border-radius: .5rem;
+    position: absolute;
+    top: calc(100% + .9rem);
+    right: 0;
+    width: max-content;
+    box-shadow: 0px 3px 15px 0px rgba(0, 0, 0, 0.2);
+
+    &::before {
+      content: '';
+      width: 100%;
+      height: .9rem;
+      position: absolute;
+      left: 0;
+      bottom: 100%;
+    }
+  }
+  &__title {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: .5rem;
+  }
+  &__list {
+    list-style-type: none;
+  }
+  &__item {
+    &:not(:last-of-type) {
+      margin-bottom: .32rem;
+    }
+    &:nth-of-type(1) a {
+      background-image: url("../assets/icons/default/sprite.svg#sort-new");
+      background-size: 1.1rem;
+    }
+    &:nth-of-type(2) a {
+      background-image: url("../assets/icons/default/sprite.svg#sort-old");
+      background-size: 1.1rem;
+    }
+    &:nth-of-type(3) a {
+      background-image: url("../assets/icons/default/sprite.svg#sort-high-price");
+      background-size: 1rem;
+    }
+    &:nth-of-type(4) a {
+      background-image: url("../assets/icons/default/sprite.svg#sort-low-price");
+      background-size: 1rem;
+    }
+    &:nth-of-type(5) a {
+      background-image: url("../assets/icons/default/sprite.svg#sort-thc-high");
+      background-size: 1.4rem;
+    }
+    &:nth-of-type(6) a {
+      background-image: url("../assets/icons/default/sprite.svg#sort-thc-low");
+      background-size: 1.5rem;
+    }
+    &:nth-of-type(7) a {
+      background-image: url("../assets/icons/default/sprite.svg#sort-cbd-high");
+      background-size: 1.4rem;
+    }
+    &:nth-of-type(8) a {
+      background-image: url("../assets/icons/default/sprite.svg#sort-cbd-low");
+      background-size: 1.5rem;
+    }
+  }
+  &__link {
+    text-decoration: none;
+    display: block;
+    font-size: .9rem;
+    padding: .2rem 0 .2rem 1.9rem;
+    background-repeat: no-repeat;
+    background-position: left center;
+  }
+}

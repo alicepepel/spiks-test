@@ -1,0 +1,23 @@
+doctype html
+html(lang="ru")
+  meta(charset="utf-8")
+  meta(http-equiv="X-UA-Compatible", content="IE=edge")
+  meta(name="viewport", content="width=device-width, initial-scale=1.0")
+
+  link(rel='stylesheet', href='css/index.css')
+
+  title
+    block title
+
+  body
+    .header
+      a(href="https://spiks.tech/" target="blank" rel="nofollow")
+        img(src="assets/media/spiks-logo.svg").logo
+
+    .main
+      block workarea
+
+    .footer
+      a(href="https://spiks.tech/feedback/" target="blank" rel="nofollow") покумекать
+
+  script(src="js/index.js")

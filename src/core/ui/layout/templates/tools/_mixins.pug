@@ -1,0 +1,10 @@
+mixin headerTab(text, name, active)
+    label.tab(class=active)
+        input(type="checkbox" class="tab__input" name= name)
+        span.tab__text= text
+
+mixin checkbox(text, name, data, checked)
+    label.checkbox
+        input(type="checkbox" class="checkbox__input" name= name data-num= data checked= checked)
+        span.checkbox__mark
+        span.checkbox__text= text
